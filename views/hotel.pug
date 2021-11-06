@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  - let hotels  = [{hotelType:"fivestar", price: 1000, capacity:"50 people"},{hotelType:"fourstar", price: 800, capacity:"60 people"},{hotelType:"threestar", price: 400, capacity:"70 people"}]
+  div(class="container-fluid mt-3")
+  div(class="row")
+    each hotel,index in hotels
+        div(class="col-sm-4" onclick=`buy(${index})`) #{hotel.hotelType} - #{hotel.price} - #{hotel.capacity}
+    script.
+     
+      function buy(itemNo)
+      {
+        alert(`Your selected hotel ${itemNo+1}`)
+      }
