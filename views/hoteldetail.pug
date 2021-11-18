@@ -1,0 +1,26 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null)
+    h2 No instance to delete
+  else
+    - let hotelID = toShow._id
+    - let hotelType = toShow.hotelType
+    - let price = toShow.price
+    - let capacity = toShow.capacity
+
+    div 
+    div.row 
+      div(class='costumeAttr mr-3') hotel ID is: 
+      div #{hotelID} 
+    div.row 
+      div(class='costumeAttr mr-3') hotel Type is: 
+      div #{hotelType} 
+    div.row 
+      div(class='costumeAttr mr-3') hotel Price is: 
+      div #{price} 
+    div.row 
+      div(class='costumeAttr mr-3') hotel Capacity is: 
+      div #{capacity}
